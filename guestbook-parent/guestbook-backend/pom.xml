@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    	 xmlns="http://maven.apache.org/POM/4.0.0" 
+    	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    	 
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>guestbook-backend</artifactId>
+	<packaging>war</packaging>
+	<name>Guestbook Backend Services</name>
+	
+	<parent>
+		<groupId>br.com.guestbook</groupId>
+		<artifactId>guestbook-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>br.com.jerimum</groupId>
+			<artifactId>jerimum-framework</artifactId>
+			<version>${jerimum.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>br.com.guestbook</groupId>
+			<artifactId>guestbook-shared-dto</artifactId>
+			<version>${guestbook.version}</version>
+		</dependency>
+
+		<!-- provided -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>lpn-condominio-webservice</warName>
+					<packagingIncludes>WEB-INF/lib/jerimum-framework*.jar,WEB-INF/lib/guestbook-*.jar,WEB-INF/classes/**,pages/**</packagingIncludes>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+            </plugin> 
+		</plugins>
+	</build>
+	
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	  <Resource auth="Container"
+	      		name="jdbc/guestbook"
+	      		driverClass="com.mysql.jdbc.Driver" 
+	      		factory="org.apache.naming.factory.BeanFactory" 
+	      		type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+	      		jdbcUrl="jdbc:mysql://127.0.0.1:3306/cdmm?autoReconnect=true"
+	      		maxPoolSize="20" 
+	      		minPoolSize="1" 
+	      		acquireIncrement="10" 
+	      		maxConnectionAge="28800"
+	      		maxIdleTime="28800"
+	      		maxIdleTimeExcessConnections="28800"
+	      		preferredTestQuery="SELECT 1;"
+	      		user="root" 
+	      		password="root" />
+	  
+</Context>

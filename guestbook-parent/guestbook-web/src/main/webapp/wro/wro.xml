@@ -1,0 +1,56 @@
+<groups xmlns="http://www.isdc.ro/wro">
+  <group name="wro-angularjs">
+	    <js>webjar:angularjs/1.4.8/angular.min.js</js>
+	    <js>webjar:angularjs/1.4.8/angular-route.min.js</js>
+	    <js>webjar:angularjs/1.4.8/angular-cookies.min.js</js>
+   </group>
+  <group name="wro-jquery">
+		<css>webjar:jquery-ui/1.11.4/jquery-ui.min.css</css>   
+	    <js>webjar:jquery/2.2.0/jquery.min.js</js>
+	    <js>webjar:jquery-ui/1.11.4/jquery-ui.min.js</js>
+   </group>
+   <group name="wro-application">
+		<css>/resources/css/**.css</css>
+		<js>/resources/js/**.js</js>
+   </group>
+   <group name="wro-template">
+	    <!-- Bootstrap Core CSS -->
+		<css>/template/bower_components/bootstrap/dist/css/bootstrap.min.css</css>
+	    <!-- Social Buttons CSS -->
+	    <css>/template/bower_components/bootstrap-social/bootstrap-social.css</css>
+	    <!-- MetisMenu CSS -->
+		<css>/template/bower_components/metisMenu/dist/metisMenu.min.css</css>
+	    <!-- Timeline CSS -->
+		<css>/template/dist/css/timeline.css</css>
+	    <!-- Custom CSS -->
+		<css>/template/dist/css/sb-admin-2.css</css>
+    	<!-- Morris Charts CSS -->
+		<css>/template/bower_components/morrisjs/morris.css</css>
+	    <!-- Custom Fonts -->
+		<css>/template/bower_components/font-awesome/css/font-awesome.min.css</css>
+		<!-- DataTables CSS -->
+	    <css>/template/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css</css>
+		
+    	<!-- jQuery -->
+<!-- 		<js>/template/bower_components/jquery/dist/jquery.min.js</js> -->
+    	<!-- Bootstrap Core JavaScript -->
+		<js>/template/bower_components/bootstrap/dist/js/bootstrap.min.js</js>
+    	<!-- Metis Menu Plugin JavaScript -->
+		<js>/template/bower_components/metisMenu/dist/metisMenu.min.js</js>
+    	<!-- Morris Charts JavaScript -->
+		<js>/template/bower_components/raphael/raphael-min.js</js>
+		<js>/template/bower_components/morrisjs/morris.min.js</js>
+	    <!-- Flot Charts JavaScript -->
+	    <js>/template/bower_components/flot/excanvas.min.js</js>
+	    <js>/template/bower_components/flot/jquery.flot.js</js>
+	    <js>/template/bower_components/flot/jquery.flot.pie.js</js>
+	    <js>/template/bower_components/flot/jquery.flot.resize.js</js>
+	    <js>/template/bower_components/flot/jquery.flot.time.js</js>
+	    <js>/template/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js</js>
+		<!-- Custom Theme JavaScript -->
+		<js>/template/dist/js/sb-admin-2.js</js>
+		<!-- DataTables JavaScript -->
+	    <js>/template/bower_components/datatables/media/js/jquery.dataTables.min.js</js>
+	    <js>/template/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js</js>
+   </group>
+</groups>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    	 
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.guestbook</groupId>
+	<artifactId>guestbook-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Guestbook Parent Project</name>
+	
+	
+	<modules>
+		<module>guestbook-shared-dto</module>
+		<module>guestbook-backend</module>
+		<module>guestbook-web</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-releasetrain</artifactId>
+				<version>Gosling-RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+	
+		<jerimum.version>1.0.3-SNAPSHOT</jerimum.version>
+		<guestbook.version>1.0.0-SNAPSHOT</guestbook.version>
+		
+		<!-- angularjs -->
+		<angularjs.version>1.4.8</angularjs.version>
+		
+		<!-- jquery -->
+		<jquery.version>2.2.0</jquery.version>
+		<jquery.ui.version>1.11.4</jquery.ui.version>
+		
+  		<!-- spring -->
+		<spring.version>4.2.2.RELEASE</spring.version>
+		<spring.security.version>4.0.3.RELEASE</spring.security.version>
+		
+		<!-- Web Resource Optimizer for Java -->
+		<wro4j.version>1.7.7</wro4j.version>
+		
+		<!-- mysql -->
+		<mysql.version>5.1.38</mysql.version>
+		
+		<!-- junit -->
+		<junit.version>4.12</junit.version>
+		<hamcrest.version>2.0.0.0</hamcrest.version>
+
+		<!-- maven -->
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.archetype.packaging>2.4</maven.archetype.packaging>
+		<maven.archetype.plugin>2.4</maven.archetype.plugin>
+		<maven.war.plugin>2.6</maven.war.plugin>
+
+	</properties>
+	
+</project>

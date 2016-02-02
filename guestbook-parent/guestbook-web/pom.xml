@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    	 xmlns="http://maven.apache.org/POM/4.0.0" 
+    	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    	 
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>guestbook-web</artifactId>
+	<packaging>war</packaging>
+	<name>Guestbook Web Application</name>
+	<url>http://maven.apache.org</url>
+	
+	
+	<parent>
+		<groupId>br.com.guestbook</groupId>
+		<artifactId>guestbook-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>br.com.jerimum</groupId>
+			<artifactId>jerimum-framework</artifactId>
+			<version>${jerimum.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>br.com.guestbook</groupId>
+			<artifactId>guestbook-shared-dto</artifactId>
+			<version>${guestbook.version}</version>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>lpn-condominio-web</warName>
+					<packagingIncludes>WEB-INF/lib/jerimum-framework*.jar,WEB-INF/lib/guestbook-*.jar,WEB-INF/classes/**,fonts/**,pages/**,resources/img/**,template/js/**,wro/*.js,wro/**.css*</packagingIncludes>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+            </plugin> 
+            
+            <!-- Web Resource Optimizer for Java -->
+			<plugin>
+				<groupId>ro.isdc.wro4j</groupId>
+				<artifactId>wro4j-maven-plugin</artifactId>
+				<version>${wro4j.version}</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+					<minimize>true</minimize>
+					<wroFile>${basedir}/src/main/webapp/wro/wro.xml</wroFile>
+					<extraConfigFile>${basedir}/src/main/webapp/wro/wro.properties</extraConfigFile>
+					<contextFolder>${basedir}/src/main/webapp/wro,${basedir}/src/main/webapp</contextFolder>
+      				<destinationFolder>${basedir}/src/main/webapp/wro/</destinationFolder>
+					<cssDestinationFolder>${basedir}/src/main/webapp/wro</cssDestinationFolder>
+					<jsDestinationFolder>${basedir}/src/main/webapp/wro</jsDestinationFolder>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.webjars</groupId>
+						<artifactId>angularjs</artifactId>
+						<version>${angularjs.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.webjars</groupId>
+						<artifactId>jquery</artifactId>
+						<version>${jquery.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.webjars</groupId>
+						<artifactId>jquery-ui</artifactId>
+						<version>${jquery.ui.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

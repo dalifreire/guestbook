@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+	<property file="${jerimum.configurationFile}" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>${logging.pattern}</Pattern>
+		</layout>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logging.path}/${applicationName}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${applicationName}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>${logging.pattern}</Pattern>
+		</encoder>
+	</appender>
+
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+	
+	
+	
+	<!-- commons =================================================================================================== -->
+
+    <logger name="org.apache" level="ERROR"/>
+
+    <!-- Hibernate ================================================================================================= -->
+
+    <logger name="org.hibernate" level="ERROR"/>
+    <logger name="org.hibernate.hql.internal.ast.QueryTranslatorImpl" level="ERROR"/>
+
+    <logger name="javax.persistence" level="ERROR"/>
+
+    <!-- Spring ==================================================================================================== -->
+
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.springframework.security" level="ERROR"/>
+
+    <!-- Aplicacao ================================================================================================= -->
+
+    <logger name="br.com.jerimum.fw" level="TRACE"/>
+    
+	<logger name="br.com.lphantus" level="TRACE"/>
+    
+</configuration>
